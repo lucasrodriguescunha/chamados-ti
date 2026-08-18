@@ -148,15 +148,27 @@ npx tsc --noEmit
 
 ## Executando o projeto
 
-Depois de compilar, abra o `index.html` diretamente no navegador.
-
-Para servir via HTTP local (recomendado, evita restrições de CORS):
+Depois de compilar, o projeto **precisa ser servido via HTTP local**:
 
 ```bash
 npx serve .
 ```
 
 E acesse o endereço exibido no terminal (normalmente <http://localhost:3000>).
+
+Alternativas equivalentes: a extensão **Live Server** do VS Code (botão _Go Live_) ou
+`python -m http.server 3000`.
+
+> **Não abra o `index.html` com duplo clique.** Pelo protocolo `file://` o navegador trata
+> a origem como `null` e bloqueia o carregamento de módulos ES por CORS:
+>
+> ```
+> Access to script at 'file:///.../dist/main.js' from origin 'null'
+> has been blocked by CORS policy
+> ```
+>
+> Isso acontece porque o `src/main.ts` importa tipos de outros arquivos, o que o torna um
+> módulo ES — por isso o `index.html` carrega o script com `<script type="module">`.
 
 ---
 
