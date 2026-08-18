@@ -44,13 +44,16 @@ O `npm start` compila o TypeScript e sobe um servidor HTTP local. Acesse o ender
 
 ```
 chamados-ti/
-├── dist/
-│   └── main.js          # JavaScript gerado pelo tsc (não editar)
+├── dist/                        # JavaScript gerado pelo tsc (não editar)
 ├── src/
-│   └── main.ts          # Código-fonte TypeScript
-├── index.html           # Estrutura da página
-├── style.css            # Estilos
-└── tsconfig.json        # Configuração do compilador
+│   ├── models/chamado.ts        # Interface Chamado
+│   ├── types/                   # Categoria, Prioridade, StatusChamado
+│   ├── criar-chamado.ts         # Montagem de um novo chamado
+│   ├── renderizar-chamados.ts   # Renderização da lista
+│   └── main.ts                  # Entrada: seleção do DOM e eventos
+├── index.html                   # Estrutura da página
+├── style.css                    # Estilos
+└── tsconfig.json                # Configuração do compilador
 ```
 
 ## Status e próximos passos
@@ -58,9 +61,8 @@ chamados-ti/
 - [x] Modelagem dos tipos (`Categoria`, `Prioridade`, `StatusChamado`)
 - [x] Interface `Chamado`
 - [x] Formulário de abertura de chamado (HTML)
-- [x] Seleção dos elementos do DOM
-- [ ] Cadastro de chamado no `submit` do formulário
-- [ ] Renderização da lista de chamados
+- [x] Cadastro de chamado no `submit` do formulário
+- [x] Renderização da lista de chamados
 - [ ] Filtro por status
 - [ ] Alteração de status do chamado
 - [ ] Persistência com `localStorage`
