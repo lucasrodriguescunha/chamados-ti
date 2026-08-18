@@ -53,21 +53,13 @@ const filtroStatus = document.querySelector(
 formulario.addEventListener("submit", function (evento) {
   evento.preventDefault();
 
-  const titulo: string = inputTitulo.value;
-  const solicitante: string = inputSolicitante.value;
-  const setor: string = inputSetor.value;
-  const descricao: string = textareaDescricao.value;
+  const id: number = proximoId++;
+  const titulo: string = inputTitulo.value.trim();
+  const descricao: string = textareaDescricao.value.trim();
+  const solicitante: string = inputSolicitante.value.trim();
+  const setor: string = inputSetor.value.trim();
   const categoria: Categoria = selectCategoria.value as Categoria;
   const prioridade: Prioridade = selectPrioridade.value as Prioridade;
-  const id: number = proximoId++;
-
-  // console.log(titulo, solicitante, setor, descricao, categoria, prioridade);
-  // console.log(typeof(titulo));
-  // console.log(typeof(solicitante));
-  // console.log(typeof(setor));
-  // console.log(typeof(descricao));
-  // console.log(typeof(categoria));
-  // console.log(typeof(prioridade));
 
   const novoChamado: Chamado = criarChamado(
     id,
