@@ -4,6 +4,7 @@
     "module": "esnext",
     "rootDir": "./src",
     "outDir": "./dist",
-    "strict": true
+    "strict": true,
+    "noEmitOnError": true
   }
 }
