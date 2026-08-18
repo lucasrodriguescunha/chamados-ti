@@ -1,6 +1,6 @@
-import type { Categoria } from "../types/categoria";
-import type { Prioridade } from "../types/prioridade";
-import type { StatusChamado } from "../types/status-chamado";
+import type { Categoria } from "../types/categoria.js";
+import type { Prioridade } from "../types/prioridade.js";
+import type { StatusChamado } from "../types/status-chamado.js";
 
 export interface Chamado {
   id: number;

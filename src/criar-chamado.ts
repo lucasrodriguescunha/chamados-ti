@@ -1,7 +1,7 @@
-import type { Chamado } from "./models/chamado";
-import type { Categoria } from "./types/categoria";
-import type { Prioridade } from "./types/prioridade";
-import type { StatusChamado } from "./types/status-chamado";
+import type { Chamado } from "./models/chamado.js";
+import type { Categoria } from "./types/categoria.js";
+import type { Prioridade } from "./types/prioridade.js";
+import type { StatusChamado } from "./types/status-chamado.js";
 
 export function criarChamado(
   id: number,

@@ -1,7 +1,7 @@
 import { criarChamado } from "./criar-chamado.js";
-import type { Chamado } from "./models/chamado";
-import { Categoria } from "./types/categoria";
-import { Prioridade } from "./types/prioridade";
+import type { Chamado } from "./models/chamado.js";
+import type { Categoria } from "./types/categoria.js";
+import type { Prioridade } from "./types/prioridade.js";
 
 const nomeSistema: string = "Sistema de chamados de TI";
 console.log(nomeSistema);
