@@ -1,4 +1,5 @@
 import { criarChamado } from "./criar-chamado.js";
+import { renderizarChamados } from "./renderizar-chamados.js";
 import type { Chamado } from "./models/chamado.js";
 import type { Categoria } from "./types/categoria.js";
 import type { Prioridade } from "./types/prioridade.js";
@@ -77,5 +78,9 @@ formulario.addEventListener("submit", function (evento) {
 
   console.log(chamados);
 
+  renderizarChamados(chamados, listaChamados);
+
   formulario.reset();
 });
+
+renderizarChamados(chamados, listaChamados);

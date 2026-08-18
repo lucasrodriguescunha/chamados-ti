@@ -1,4 +1,5 @@
 import { criarChamado } from "./criar-chamado.js";
+import { renderizarChamados } from "./renderizar-chamados.js";
 const nomeSistema = "Sistema de chamados de TI";
 console.log(nomeSistema);
 const primeiroChamado = {
@@ -39,5 +40,7 @@ formulario.addEventListener("submit", function (evento) {
     console.log("Formulário enviado!", novoChamado);
     chamados.push(novoChamado);
     console.log(chamados);
+    renderizarChamados(chamados, listaChamados);
     formulario.reset();
 });
+renderizarChamados(chamados, listaChamados);
