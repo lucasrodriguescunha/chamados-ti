@@ -201,13 +201,13 @@ npm run check
 
 O `tsconfig.json` do projeto:
 
-| Opção     | Valor      | O que faz                                   |
-| --------- | ---------- | ------------------------------------------- |
-| `target`  | `es2020`   | Versão do JavaScript gerado                 |
-| `module`  | `esnext`   | Formato dos módulos                         |
-| `rootDir` | `./src`    | Pasta de entrada do código-fonte            |
-| `outDir`  | `./dist`   | Pasta de saída do JavaScript compilado      |
-| `strict`  | `true`     | Ativa todas as checagens estritas de tipo   |
+| Opção     | Valor    | O que faz                                 |
+| --------- | -------- | ----------------------------------------- |
+| `target`  | `es2020` | Versão do JavaScript gerado               |
+| `module`  | `esnext` | Formato dos módulos                       |
+| `rootDir` | `./src`  | Pasta de entrada do código-fonte          |
+| `outDir`  | `./dist` | Pasta de saída do JavaScript compilado    |
+| `strict`  | `true`   | Ativa todas as checagens estritas de tipo |
 
 ---
 
