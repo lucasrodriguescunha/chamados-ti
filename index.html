@@ -10,92 +10,90 @@
   </head>
 
   <body>
-    <body>
-      <main>
-        <h1>Sistema de Chamados de TI</h1>
-        <p>Abra e acompanhe solicitações de suporte técnico.</p>
+    <main>
+      <h1>Sistema de Chamados de TI</h1>
+      <p>Abra e acompanhe solicitações de suporte técnico.</p>
 
-        <section>
-          <h2>Abrir novo chamado</h2>
+      <section>
+        <h2>Abrir novo chamado</h2>
 
-          <form id="form-chamado">
-            <label for="titulo">Título</label>
-            <input
-              type="text"
-              id="titulo"
-              placeholder="Ex.: Computador não liga"
-              required
-            />
+        <form id="form-chamado">
+          <label for="titulo">Título</label>
+          <input
+            type="text"
+            id="titulo"
+            placeholder="Ex.: Computador não liga"
+            required
+          />
 
-            <label for="solicitante">Solicitante</label>
-            <input
-              type="text"
-              id="solicitante"
-              placeholder="Nome do solicitante"
-              required
-            />
+          <label for="solicitante">Solicitante</label>
+          <input
+            type="text"
+            id="solicitante"
+            placeholder="Nome do solicitante"
+            required
+          />
 
-            <label for="setor">Setor</label>
-            <input
-              type="text"
-              id="setor"
-              placeholder="Ex.: Financeiro"
-              required
-            />
+          <label for="setor">Setor</label>
+          <input
+            type="text"
+            id="setor"
+            placeholder="Ex.: Financeiro"
+            required
+          />
 
-            <label for="categoria">Categoria</label>
-            <select id="categoria" required>
-              <option value="">Selecione</option>
-              <option value="Hardware">Hardware</option>
-              <option value="Software">Software</option>
-              <option value="Rede">Rede</option>
-              <option value="Acesso">Acesso</option>
-              <option value="Outros">Outros</option>
-            </select>
-
-            <label for="prioridade">Prioridade</label>
-            <select id="prioridade" required>
-              <option value="">Selecione</option>
-              <option value="Baixa">Baixa</option>
-              <option value="Média">Média</option>
-              <option value="Alta">Alta</option>
-            </select>
-
-            <label for="descricao">Descrição</label>
-            <textarea
-              id="descricao"
-              placeholder="Descreva o problema"
-              required
-            ></textarea>
-
-            <button type="submit">Abrir chamado</button>
-          </form>
-        </section>
-
-        <section>
-          <h2>Filtros</h2>
-
-          <label for="filtro-status">Status</label>
-
-          <select id="filtro-status">
-            <option value="Todos">Todos</option>
-            <option value="Aberto">Aberto</option>
-            <option value="Em atendimento">Em atendimento</option>
-            <option value="Resolvido">Resolvido</option>
+          <label for="categoria">Categoria</label>
+          <select id="categoria" required>
+            <option value="">Selecione</option>
+            <option value="Hardware">Hardware</option>
+            <option value="Software">Software</option>
+            <option value="Rede">Rede</option>
+            <option value="Acesso">Acesso</option>
+            <option value="Outros">Outros</option>
           </select>
-        </section>
 
-        <section>
-            
-          <h2>Chamados cadastrados</h2>
+          <label for="prioridade">Prioridade</label>
+          <select id="prioridade" required>
+            <option value="">Selecione</option>
+            <option value="Baixa">Baixa</option>
+            <option value="Média">Média</option>
+            <option value="Alta">Alta</option>
+          </select>
 
-          <div id="lista-chamados">
-            <p>Nenhum chamado cadastrado.</p>
-          </div>
-        </section>
-      </main>
+          <label for="descricao">Descrição</label>
+          <textarea
+            id="descricao"
+            placeholder="Descreva o problema"
+            required
+          ></textarea>
 
-      <script src="dist/main.js"></script>
-    </body>
+          <button type="submit">Abrir chamado</button>
+        </form>
+      </section>
+
+      <section>
+        <h2>Filtros</h2>
+
+        <label for="filtro-status">Status</label>
+
+        <select id="filtro-status">
+          <option value="Todos">Todos</option>
+          <option value="Aberto">Aberto</option>
+          <option value="Em atendimento">Em atendimento</option>
+          <option value="Resolvido">Resolvido</option>
+        </select>
+      </section>
+
+      <section>
+          
+        <h2>Chamados cadastrados</h2>
+
+        <div id="lista-chamados">
+          <p>Nenhum chamado cadastrado.</p>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="dist/main.js"></script>
   </body>
 </html>
