@@ -2,7 +2,7 @@
   "name": "chamados-ti",
   "version": "1.0.0",
   "description": "Aplicação web para abertura e acompanhamento de chamados de suporte técnico, feita em **TypeScript puro**, sem framework, com manipulação direta do DOM.",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "format": "prettier --write .",
     "format:check": "prettier --check .",
