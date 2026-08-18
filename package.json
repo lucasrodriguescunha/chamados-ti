@@ -4,7 +4,20 @@
   "description": "Aplicação web para abertura e acompanhamento de chamados de suporte técnico, feita em **TypeScript puro**, sem framework, com manipulação direta do DOM.",
   "main": "index.js",
   "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": false,
+    "tabWidth": 2,
+    "useTabs": false,
+    "trailingComma": "all",
+    "printWidth": 80,
+    "arrowParens": "always",
+    "bracketSpacing": true,
+    "endOfLine": "lf"
   },
   "repository": {
     "type": "git",
@@ -19,6 +32,7 @@
   },
   "homepage": "https://github.com/lucasrodriguescunha/chamados-ti#readme",
   "devDependencies": {
+    "prettier": "3.9.6",
     "typescript": "^7.0.2"
   }
 }

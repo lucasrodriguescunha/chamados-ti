@@ -1,0 +1,14 @@
+# Normaliza quebras de linha: LF no repositório e também no working copy.
+# Evita conflito com o Prettier (endOfLine: "lf") em máquinas Windows.
+* text=auto eol=lf
+
+# Arquivos binários: nunca converter.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
+*.woff binary
+*.woff2 binary
+*.pdf binary

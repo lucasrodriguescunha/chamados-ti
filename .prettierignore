@@ -1,0 +1,7 @@
+# Dependências
+node_modules/
+
+# Build gerado pelo TypeScript
+dist/
+
+package-lock.json
