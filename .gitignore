@@ -1,0 +1,17 @@
+# Dependências
+node_modules/
+
+# JS transpilado fora do lugar: o build correto vai para dist/ (outDir).
+# Se algo gerar .js dentro de src/, é acidente e não deve ser versionado.
+src/**/*.js
+src/**/*.js.map
+
+# Logs
+*.log
+npm-debug.log*
+
+# Sistema operacional / editor
+.DS_Store
+Thumbs.db
+
+# Obs.: dist/ é versionado de propósito — o index.html carrega dist/main.js.

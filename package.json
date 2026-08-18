@@ -1,0 +1,24 @@
+{
+  "name": "chamados-ti",
+  "version": "1.0.0",
+  "description": "Aplicação web para abertura e acompanhamento de chamados de suporte técnico, feita em **TypeScript puro**, sem framework, com manipulação direta do DOM.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucasrodriguescunha/chamados-ti.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/lucasrodriguescunha/chamados-ti/issues"
+  },
+  "homepage": "https://github.com/lucasrodriguescunha/chamados-ti#readme",
+  "devDependencies": {
+    "typescript": "^7.0.2"
+  }
+}
