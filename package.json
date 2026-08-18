@@ -4,9 +4,12 @@
   "description": "Aplicação web para abertura e acompanhamento de chamados de suporte técnico, feita em **TypeScript puro**, sem framework, com manipulação direta do DOM.",
   "main": "main.js",
   "scripts": {
+    "start": "npm run build && npx --yes serve .",
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "check": "tsc --noEmit",
     "format": "prettier --write .",
-    "format:check": "prettier --check .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format:check": "prettier --check ."
   },
   "prettier": {
     "semi": true,
