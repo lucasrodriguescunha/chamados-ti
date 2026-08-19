@@ -1,6 +1,7 @@
 import { criarChamado } from "./criar-chamado.js";
 import { renderizarChamados } from "./renderizar-chamados.js";
 import { alterarStatus } from "./alterar-status.js";
+import { carregarChamados, salvarChamados } from "./armazenamento.js";
 import type { Chamado } from "./models/chamado.js";
 import type { Categoria } from "./types/categoria.js";
 import type { Prioridade } from "./types/prioridade.js";
@@ -20,15 +21,28 @@ const primeiroChamado: Chamado = {
   dataAbertura: "10/08/2026",
 };
 
-console.log("Primeiro chamado criado", primeiroChamado);
+function calcularProximoId(chamados: Chamado[]): number {
+  let maiorId: number = 0;
 
-let proximoId: number = primeiroChamado.id + 1;
+  chamados.forEach(function (chamado) {
+    if (chamado.id > maiorId) {
+      maiorId = chamado.id;
+    }
+  });
 
-const chamados: Chamado[] = [];
+  return maiorId + 1;
+}
 
-chamados.push(primeiroChamado);
+const chamados: Chamado[] = carregarChamados();
 
-console.log("Primeiro chamado adicionado", chamados);
+if (chamados.length === 0) {
+  chamados.push(primeiroChamado);
+  salvarChamados(chamados);
+}
+
+let proximoId: number = calcularProximoId(chamados);
+
+console.log("Chamados carregados", chamados);
 
 const formulario = document.querySelector("#form-chamado") as HTMLFormElement;
 const inputTitulo = document.querySelector("#titulo") as HTMLInputElement;
@@ -102,6 +116,8 @@ formulario.addEventListener("submit", function (evento) {
 
   chamados.push(novoChamado);
 
+  salvarChamados(chamados);
+
   console.log(chamados);
 
   aplicarFiltros();
@@ -119,6 +135,8 @@ listaChamados.addEventListener("click", function (evento) {
   const id: number = Number(botao.dataset.id);
 
   alterarStatus(chamados, id);
+
+  salvarChamados(chamados);
 
   aplicarFiltros();
 });
