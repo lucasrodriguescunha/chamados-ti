@@ -50,6 +50,8 @@ chamados-ti/
 │   ├── types/                   # Categoria, Prioridade, StatusChamado
 │   ├── criar-chamado.ts         # Montagem de um novo chamado
 │   ├── renderizar-chamados.ts   # Renderização da lista
+│   ├── alterar-status.ts        # Avanço do status de um chamado
+│   ├── armazenamento.ts         # Persistência no localStorage
 │   └── main.ts                  # Entrada: seleção do DOM e eventos
 ├── index.html                   # Estrutura da página
 ├── style.css                    # Estilos
@@ -63,9 +65,10 @@ chamados-ti/
 - [x] Formulário de abertura de chamado (HTML)
 - [x] Cadastro de chamado no `submit` do formulário
 - [x] Renderização da lista de chamados
-- [ ] Filtro por status
-- [ ] Alteração de status do chamado
-- [ ] Persistência com `localStorage`
+- [x] Filtro por status
+- [x] Alteração de status do chamado
+- [x] Busca por ID ou título
+- [x] Persistência com `localStorage`
 
 ## Autor
 
