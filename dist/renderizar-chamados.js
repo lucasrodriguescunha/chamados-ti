@@ -6,13 +6,13 @@ function escaparHtml(texto) {
         .replace(/"/g, "&quot;")
         .replace(/'/g, "&#39;");
 }
-export function renderizarChamados(chamados, listaChamados) {
-    if (chamados.length === 0) {
-        listaChamados.innerHTML = "<p>Nenhum chamado cadastrado.</p>";
+export function renderizarChamados(lista, listaChamados) {
+    if (lista.length === 0) {
+        listaChamados.innerHTML = "<p>Nenhum chamado encontrado.</p>";
         return;
     }
     let html = "";
-    chamados.forEach(function (chamado) {
+    lista.forEach(function (chamado) {
         html += `
       <div class="chamado">
         <h3>#${chamado.id} - ${escaparHtml(chamado.titulo)}</h3>
@@ -23,6 +23,10 @@ export function renderizarChamados(chamados, listaChamados) {
         <p><strong>Status:</strong> ${escaparHtml(chamado.status)}</p>
         <p><strong>Data:</strong> ${escaparHtml(chamado.dataAbertura)}</p>
         <p>${escaparHtml(chamado.descricao)}</p>
+
+        <button data-id="${chamado.id}">
+          Alterar status
+        </button>
       </div>
     `;
     });
