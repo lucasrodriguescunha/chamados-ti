@@ -31,6 +31,10 @@ export function renderizarChamados(
         <p><strong>Status:</strong> ${escaparHtml(chamado.status)}</p>
         <p><strong>Data:</strong> ${escaparHtml(chamado.dataAbertura)}</p>
         <p>${escaparHtml(chamado.descricao)}</p>
+
+        <button data-id="${chamado.id}">
+          Alterar status
+        </button>
       </div>
     `;
   });

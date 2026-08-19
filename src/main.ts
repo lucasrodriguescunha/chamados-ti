@@ -1,5 +1,6 @@
 import { criarChamado } from "./criar-chamado.js";
 import { renderizarChamados } from "./renderizar-chamados.js";
+import { alterarStatus } from "./alterar-status.js";
 import type { Chamado } from "./models/chamado.js";
 import type { Categoria } from "./types/categoria.js";
 import type { Prioridade } from "./types/prioridade.js";
@@ -81,6 +82,20 @@ formulario.addEventListener("submit", function (evento) {
   renderizarChamados(chamados, listaChamados);
 
   formulario.reset();
+});
+
+listaChamados.addEventListener("click", function (evento) {
+  const botao = evento.target as HTMLElement;
+
+  if (!botao.dataset.id) {
+    return;
+  }
+
+  const id: number = Number(botao.dataset.id);
+
+  alterarStatus(chamados, id);
+
+  renderizarChamados(chamados, listaChamados);
 });
 
 renderizarChamados(chamados, listaChamados);
