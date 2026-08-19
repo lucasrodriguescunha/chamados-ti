@@ -51,6 +51,31 @@ const listaChamados = document.querySelector(
 const filtroStatus = document.querySelector(
   "#filtro-status",
 ) as HTMLSelectElement;
+const inputBusca = document.querySelector("#busca") as HTMLInputElement;
+
+function aplicarFiltros(): void {
+  const termo: string = inputBusca.value.toLowerCase();
+  const statusSelecionado: string = filtroStatus.value;
+
+  let resultado: Chamado[] = chamados;
+
+  if (statusSelecionado !== "Todos") {
+    resultado = resultado.filter(function (chamado) {
+      return chamado.status === statusSelecionado;
+    });
+  }
+
+  if (termo !== "") {
+    resultado = resultado.filter(function (chamado) {
+      return (
+        chamado.titulo.toLowerCase().includes(termo) ||
+        chamado.id.toString() === termo
+      );
+    });
+  }
+
+  renderizarChamados(resultado, listaChamados);
+}
 
 formulario.addEventListener("submit", function (evento) {
   evento.preventDefault();
@@ -79,7 +104,7 @@ formulario.addEventListener("submit", function (evento) {
 
   console.log(chamados);
 
-  renderizarChamados(chamados, listaChamados);
+  aplicarFiltros();
 
   formulario.reset();
 });
@@ -95,7 +120,15 @@ listaChamados.addEventListener("click", function (evento) {
 
   alterarStatus(chamados, id);
 
-  renderizarChamados(chamados, listaChamados);
+  aplicarFiltros();
 });
 
-renderizarChamados(chamados, listaChamados);
+filtroStatus.addEventListener("change", function () {
+  aplicarFiltros();
+});
+
+inputBusca.addEventListener("input", function () {
+  aplicarFiltros();
+});
+
+aplicarFiltros();

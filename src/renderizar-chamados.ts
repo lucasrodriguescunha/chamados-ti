@@ -10,17 +10,17 @@ function escaparHtml(texto: string): string {
 }
 
 export function renderizarChamados(
-  chamados: Chamado[],
+  lista: Chamado[],
   listaChamados: HTMLDivElement,
 ): void {
-  if (chamados.length === 0) {
-    listaChamados.innerHTML = "<p>Nenhum chamado cadastrado.</p>";
+  if (lista.length === 0) {
+    listaChamados.innerHTML = "<p>Nenhum chamado encontrado.</p>";
     return;
   }
 
   let html: string = "";
 
-  chamados.forEach(function (chamado) {
+  lista.forEach(function (chamado) {
     html += `
       <div class="chamado">
         <h3>#${chamado.id} - ${escaparHtml(chamado.titulo)}</h3>
